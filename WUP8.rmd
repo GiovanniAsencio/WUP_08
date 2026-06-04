@@ -1,4 +1,5 @@
 ---
+#test
 title: "simpleRegress"
 author: "Zoilo Franco"
 date: "Spring 2026"
@@ -18,67 +19,19 @@ bears$SEX<- as.factor(bears$SEX)
 bears$MONTH<- as.factor(bears$MONTH)
 ```
 
-## Model LENGTH ~ NECK  this is an example  
+## Model AGE ~ NECK
 
 ```{r}
-M1 <- lm(AGE~LENGTH,data=bears)
-plot(AGE~LENGTH,data=bears)
-abline(M1)
-summary.lm(M1)
+M2 <- lm(AGE~NECK,data=bears)
+plot(AGE~NECK,data=bears)
+abline(M2)
+summary.lm(M2)
 ```
 
+The plot shows a positive linear relationship between AGE and NECK.
+The adjusted R-squared from the model output is ______.
 
-The plot shows a positive linear relationship between AGE and LENGTH.
-The adjusted R-squared from the model output is 
-    
-## Model LENGTH ~ HEADLEN
+## Compare Models
 
-```{r}
-L1 <- lm(LENGTH~HEADLEN,data=bears)
-plot(LENGTH~HEADLEN,data=bears)
-abline(L1)
-summary.lm(L1)
-```
-    
-The plot shows a good linear relationship.    
-The Adjusted R-Squared is 0.8434   
-    
-## Model LENGTH ~ HeadWTH
-    
-```{r}
-L2 <- lm(LENGTH~HEADWTH,data=bears)
-plot(LENGTH~HEADWTH,data=bears)
-abline(L2)
-summary.lm(L2)
-```
-    
-The plot shows a good linear relationship.    
-The Adjusted R-Squared is 0.5321
-
-## Model LENGTH ~ CHEST
-
-```{r}
-L3 <- lm(LENGTH~CHEST,data=bears)
-plot(LENGTH~CHEST,data=bears)
-abline(L3)
-summary.lm(L3)
-```
-    
-The plot shows a good linear relationship.    
-The Adjusted R-Squared is 0.7869   
-    
-## Model LENGTH ~ WEIGHT
-    
-```{r}
-L4 <- lm(LENGTH~WEIGHT,data=bears)
-plot(LENGTH~WEIGHT,data=bears)
-abline(L4)
-summary.lm(L4)
-```
-    
-The plot shows a good linear relationship.    
-The Adjusted R-Squared is 0.7423 
-    
-## Models from WORST to BEST
-    
-The models range from HEADWTH 0.5321, Weight 0.7423, CHEST.7869, to HEADLEN 0.8434 using Adjusted R-Squared. 
+The better model is determined using Adjusted R-squared.
+The model with the larger Adjusted R-squared explains more variation in AGE.
